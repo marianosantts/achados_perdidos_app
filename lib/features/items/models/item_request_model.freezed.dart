@@ -22,8 +22,8 @@ mixin _$ItemRequestModel {
  String get dataOcorrido;/// Máximo 100 caracteres.
  String get nomeContato;/// Máximo 20 caracteres.
  String get telefoneContato;/// URL da imagem — opcional, máximo 500 caracteres.
-@JsonKey(includeIfNull: false) String? get imagemUrl;/// Observação adicional — opcional, máximo 500 caracteres.
-@JsonKey(includeIfNull: false) String? get observacao;
+ String? get imagemUrl;/// Observação adicional — opcional, máximo 500 caracteres.
+ String? get observacao;
 /// Create a copy of ItemRequestModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -56,7 +56,7 @@ abstract mixin class $ItemRequestModelCopyWith<$Res>  {
   factory $ItemRequestModelCopyWith(ItemRequestModel value, $Res Function(ItemRequestModel) _then) = _$ItemRequestModelCopyWithImpl;
 @useResult
 $Res call({
- String titulo, String descricao, TipoItem tipo, CategoriaItem categoria, String local, String dataOcorrido, String nomeContato, String telefoneContato,@JsonKey(includeIfNull: false) String? imagemUrl,@JsonKey(includeIfNull: false) String? observacao
+ String titulo, String descricao, TipoItem tipo, CategoriaItem categoria, String local, String dataOcorrido, String nomeContato, String telefoneContato, String? imagemUrl, String? observacao
 });
 
 
@@ -170,7 +170,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String titulo,  String descricao,  TipoItem tipo,  CategoriaItem categoria,  String local,  String dataOcorrido,  String nomeContato,  String telefoneContato, @JsonKey(includeIfNull: false)  String? imagemUrl, @JsonKey(includeIfNull: false)  String? observacao)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String titulo,  String descricao,  TipoItem tipo,  CategoriaItem categoria,  String local,  String dataOcorrido,  String nomeContato,  String telefoneContato,  String? imagemUrl,  String? observacao)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ItemRequestModel() when $default != null:
 return $default(_that.titulo,_that.descricao,_that.tipo,_that.categoria,_that.local,_that.dataOcorrido,_that.nomeContato,_that.telefoneContato,_that.imagemUrl,_that.observacao);case _:
@@ -191,7 +191,7 @@ return $default(_that.titulo,_that.descricao,_that.tipo,_that.categoria,_that.lo
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String titulo,  String descricao,  TipoItem tipo,  CategoriaItem categoria,  String local,  String dataOcorrido,  String nomeContato,  String telefoneContato, @JsonKey(includeIfNull: false)  String? imagemUrl, @JsonKey(includeIfNull: false)  String? observacao)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String titulo,  String descricao,  TipoItem tipo,  CategoriaItem categoria,  String local,  String dataOcorrido,  String nomeContato,  String telefoneContato,  String? imagemUrl,  String? observacao)  $default,) {final _that = this;
 switch (_that) {
 case _ItemRequestModel():
 return $default(_that.titulo,_that.descricao,_that.tipo,_that.categoria,_that.local,_that.dataOcorrido,_that.nomeContato,_that.telefoneContato,_that.imagemUrl,_that.observacao);case _:
@@ -211,7 +211,7 @@ return $default(_that.titulo,_that.descricao,_that.tipo,_that.categoria,_that.lo
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String titulo,  String descricao,  TipoItem tipo,  CategoriaItem categoria,  String local,  String dataOcorrido,  String nomeContato,  String telefoneContato, @JsonKey(includeIfNull: false)  String? imagemUrl, @JsonKey(includeIfNull: false)  String? observacao)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String titulo,  String descricao,  TipoItem tipo,  CategoriaItem categoria,  String local,  String dataOcorrido,  String nomeContato,  String telefoneContato,  String? imagemUrl,  String? observacao)?  $default,) {final _that = this;
 switch (_that) {
 case _ItemRequestModel() when $default != null:
 return $default(_that.titulo,_that.descricao,_that.tipo,_that.categoria,_that.local,_that.dataOcorrido,_that.nomeContato,_that.telefoneContato,_that.imagemUrl,_that.observacao);case _:
@@ -226,7 +226,7 @@ return $default(_that.titulo,_that.descricao,_that.tipo,_that.categoria,_that.lo
 @JsonSerializable()
 
 class _ItemRequestModel implements ItemRequestModel {
-  const _ItemRequestModel({required this.titulo, required this.descricao, required this.tipo, required this.categoria, required this.local, required this.dataOcorrido, required this.nomeContato, required this.telefoneContato, @JsonKey(includeIfNull: false) this.imagemUrl, @JsonKey(includeIfNull: false) this.observacao});
+  const _ItemRequestModel({required this.titulo, required this.descricao, required this.tipo, required this.categoria, required this.local, required this.dataOcorrido, required this.nomeContato, required this.telefoneContato, this.imagemUrl, this.observacao});
   factory _ItemRequestModel.fromJson(Map<String, dynamic> json) => _$ItemRequestModelFromJson(json);
 
 /// Mínimo 3, máximo 100 caracteres.
@@ -244,9 +244,9 @@ class _ItemRequestModel implements ItemRequestModel {
 /// Máximo 20 caracteres.
 @override final  String telefoneContato;
 /// URL da imagem — opcional, máximo 500 caracteres.
-@override@JsonKey(includeIfNull: false) final  String? imagemUrl;
+@override final  String? imagemUrl;
 /// Observação adicional — opcional, máximo 500 caracteres.
-@override@JsonKey(includeIfNull: false) final  String? observacao;
+@override final  String? observacao;
 
 /// Create a copy of ItemRequestModel
 /// with the given fields replaced by the non-null parameter values.
@@ -281,7 +281,7 @@ abstract mixin class _$ItemRequestModelCopyWith<$Res> implements $ItemRequestMod
   factory _$ItemRequestModelCopyWith(_ItemRequestModel value, $Res Function(_ItemRequestModel) _then) = __$ItemRequestModelCopyWithImpl;
 @override @useResult
 $Res call({
- String titulo, String descricao, TipoItem tipo, CategoriaItem categoria, String local, String dataOcorrido, String nomeContato, String telefoneContato,@JsonKey(includeIfNull: false) String? imagemUrl,@JsonKey(includeIfNull: false) String? observacao
+ String titulo, String descricao, TipoItem tipo, CategoriaItem categoria, String local, String dataOcorrido, String nomeContato, String telefoneContato, String? imagemUrl, String? observacao
 });
 
 

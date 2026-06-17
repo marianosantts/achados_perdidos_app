@@ -30,8 +30,8 @@ Map<String, dynamic> _$ItemRequestModelToJson(_ItemRequestModel instance) =>
       'dataOcorrido': instance.dataOcorrido,
       'nomeContato': instance.nomeContato,
       'telefoneContato': instance.telefoneContato,
-      if (instance.imagemUrl case final value?) 'imagemUrl': value,
-      if (instance.observacao case final value?) 'observacao': value,
+      'imagemUrl': instance.imagemUrl,
+      'observacao': instance.observacao,
     };
 
 const _$TipoItemEnumMap = {
